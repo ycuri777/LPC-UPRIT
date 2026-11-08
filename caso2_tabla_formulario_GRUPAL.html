@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario combinado con tabla HTML</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<main class="panel">
+  <h1>Uso de una tabla para alinear un formulario</h1>
+  <p>Completa los datos solicitados:</p>
+  <form id="formAlumno">
+    <table class="tabla-formulario">
+      <tr>
+        <td><label for="nombreAlumno">Nombre del alumno:</label></td>
+        <td><input type="text" id="nombreAlumno" name="nombre" required></td>
+      </tr>
+      <tr>
+        <td><label for="paterno">Apellido paterno:</label></td>
+        <td><input type="text" id="paterno" name="apellido_paterno" required></td>
+      </tr>
+      <tr>
+        <td><label for="materno">Apellido materno:</label></td>
+        <td><input type="text" id="materno" name="apellido_materno"></td>
+      </tr>
+      <tr>
+        <td><label for="correo">Correo electrónico:</label></td>
+        <td><input type="email" id="correo" name="correo" required></td>
+      </tr>
+      <tr>
+        <td><label for="edad">Edad:</label></td>
+        <td><input type="number" id="edad" name="edad" min="1" max="120" required></td>
+      </tr>
+      <tr>
+        <td><label for="escuela">Escuela:</label></td>
+        <td>
+          <select id="escuela" name="escuela" required>
+            <option value="">Seleccione una escuela</option>
+            <option value="1562">N° 1562</option>
+            <option value="MR">Monte Rico</option>
+            <option value="GP">Gonzales Prada</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="municipio">Municipio:</label></td>
+        <td>
+          <select id="municipio" name="municipio" required>
+            <option value="">Seleccione un municipio</option>
+            <option value="La Molina">La Molina</option>
+            <option value="Lima">Lima</option>
+            <option value="santa Anita">Santa Anita</option>
+            <option value="Ate">Ate</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="comentarios">Comentarios:</label></td>
+        <td><textarea id="comentarios" name="comentarios" rows="5"></textarea></td>
+      </tr>
+    </table>
+    <div class="contenedor-enviar">
+      <button type="submit">Enviar datos</button>
+    </div>
+  </form>
+</main>
+<script>
+document.getElementById("formAlumno").addEventListener("submit", function(event) {
+  event.preventDefault();
+  alert("Los datos se validaron correctamente. Para almacenarlos se necesita conectar el formulario a un servidor.");
+});
+</script>
+</body>
+</html>
